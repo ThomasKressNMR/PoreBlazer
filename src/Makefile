@@ -66,6 +66,16 @@ OFLAGS = -O2 -unshared
 LINKERFLAGS = 
 endif
 
+
+# --------- Apple silicon (M1) override ----------------
+UNAME_S := $(shell uname -s)
+ifeq ($(UNAME_S),Darwin)
+  ifeq ($(FC),gfortran)
+    OFLAGS = -O2 -fcommon
+    LINKERFLAGS =
+  endif
+endif
+
 ### ------------ define flags for nagf95, intel-linux compiler by NAG ---------
 ###
 ###
