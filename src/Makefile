@@ -19,7 +19,7 @@ CMD = poreblazer.exe
 # Make sure it is defined
 #          ifeq ($(strip$(FORTRAN_COMPILER)),)
 # Otherwise you can define it here also by uncommenting next line
-FORTRAN_COMPILER= ifort
+FORTRAN_COMPILER= gfortran
 ifeq ($(FORTRAN_COMPILER),)
  FC = defaultCompiler
 else
